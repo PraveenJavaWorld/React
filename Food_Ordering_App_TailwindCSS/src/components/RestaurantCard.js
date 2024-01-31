@@ -15,4 +15,17 @@ const RestaurantCard = (props) => {
     );
 };
 
+// Higher Order Component - Is a function which will take a Component as param and returns a Component
+
+export const withRatedLabel = (RestaurantCard) =>{
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-black text-white p-2 m-4 rounded-md">Highly Rated</label>
+                <RestaurantCard {...props}/>
+            </div>
+        );
+    }
+}
+
 export default RestaurantCard;
