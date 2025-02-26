@@ -7,9 +7,9 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div className="m-2 flex justify-between border border-b-black bg-gray-300 shadow-lg">
+        <div className="m-2 flex justify-between border border-b-black bg-purple-100 shadow-lg">
             <div className="p-4">
-                <img className="w-20 rounded-md" alt="no-image" src={LOGO_URL} />
+                <img className="w-16 rounded-md" alt="no-image" src={LOGO_URL} />
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-4">

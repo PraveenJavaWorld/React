@@ -10,30 +10,37 @@ const AboutUs = lazy(() => import("./components/AboutUs"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
 
 const appRouter = createBrowserRouter([
-    {
-        path:"/",
-        element:<AppLayout />,
-        errorElement: <Error />,
-        children:[
-            {
-                path:"/",
-                element:<Body />
-            },
-            {
-                path:"/about",
-                element:<Suspense fallback={<h1>Loading....</h1>}><AboutUs /></Suspense>
-            },
-            {
-                path:"/contact",
-                element:<Suspense fallback={<h1>Loading....</h1>}><ContactUs /></Suspense>
-            },
-            {
-                path:"/restaurants/:resId",
-                element:<RestaurantMenu />
-            }
-        ]
-    },
-    
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <AboutUs />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <ContactUs />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
